@@ -14,15 +14,11 @@ pd.set_option('display.width', 2000)
 #pd.set_option('display.float_format', '{:20,.2f}'.format)
 pd.set_option('display.max_colwidth', None)
 
-df = pd.read_csv('winemag-data_custom.csv')
+df = pd.read_csv('../data/winemag-data_custom.csv')
 
-#print("Hello! My name is Winston and I am your personal sommelier! \n")
-#input_1 = input("What type of wine are you looking for? \n")
-#notes = input("How would you like your wine to taste like? \n")
-
-input_1 = "I'd like a red wine, 10 to 20 dollars, from Italy, in the 90 point range"
-
-notes = "Sweet and fruity"
+print("Hello! My name is Winston and I am your personal sommelier! \n")
+input_1 = input("What type of wine are you looking for? \n")
+notes = input("How would you like your wine to taste like? \n")
 
 country = ""
 point = 0

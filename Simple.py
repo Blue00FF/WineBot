@@ -14,20 +14,14 @@ pd.set_option('display.width', 2000)
 pd.set_option('display.float_format', '{:20,.2f}'.format)
 pd.set_option('display.max_colwidth', None)
 
-df = pd.read_csv('winemag-data_custom.csv')
+df = pd.read_csv('../data/winemag-data_custom.csv')
 
-#print("Hello! My name is Winston and I am your personal sommelier! \n")
-#colour = pyip.inputChoice(['Red', 'White'], prompt="Are you looking for a red or a white wine? \n")
-#country = pyip.inputStr(prompt="Are you looking for a wine that originates from which country? \n")
-#point = pyip.inputNum(prompt="Whereabout should it be in the point range? \n")
-#price = pyip.inputNum(prompt="How much would you like to spend? \n")
-#notes = pyip.inputStr(prompt="Which notes should your wine have? \n")
-
-colour = "Red"
-country = "Italy"
-point = 90
-price = 10
-notes = "Sweet and fruity"
+print("Hello! My name is Winston and I am your personal sommelier! \n")
+colour = pyip.inputChoice(['Red', 'White'], prompt="Are you looking for a red or a white wine? \n")
+country = pyip.inputStr(prompt="Are you looking for a wine that originates from which country? \n")
+point = pyip.inputNum(prompt="Whereabout should it be in the point range? \n")
+price = pyip.inputNum(prompt="How much would you like to spend? \n")
+notes = pyip.inputStr(prompt="Which notes should your wine have? \n")
 
 df = df[df['country'] == country]
 df = df[df['points'] == point]
