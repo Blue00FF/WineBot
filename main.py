@@ -14,6 +14,11 @@ pd.set_option('display.width', 2000)
 #pd.set_option('display.float_format', '{:20,.2f}'.format)
 pd.set_option('display.max_colwidth', None)
 
+nltk.download('stopwords')
+nltk.download('punkt')
+nltk.download('wordnet')
+
+
 df = pd.read_csv('../data/winemag-data_custom.csv')
 
 print("Hello! My name is Winston and I am your personal sommelier! \n")
