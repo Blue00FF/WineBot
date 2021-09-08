@@ -6,17 +6,12 @@ import nltk
 from nltk.corpus import stopwords
 from nltk import word_tokenize
 from nltk.stem import WordNetLemmatizer
-import numpy as np
 
 pd.set_option('display.max_rows', None)
 pd.set_option('display.max_columns', None)
 pd.set_option('display.width', 2000)
 pd.set_option('display.float_format', '{:20,.2f}'.format)
 pd.set_option('display.max_colwidth', None)
-
-nltk.download('stopwords')
-nltk.download('punkt')
-nltk.download('wordnet')
 
 df = pd.read_csv('../data/winemag-data_custom.csv')
 
@@ -27,7 +22,11 @@ point = pyip.inputNum(prompt="Whereabout should it be in the point range? \n")
 price = pyip.inputNum(prompt="How much would you like to spend? \n")
 notes = pyip.inputStr(prompt="Which notes should your wine have? \n")
 
-df = df[df['country'] == country]
+# This is what I use when I want to test changes to my program without having to input strings over and over again
+# input_1 = "red, from italy, 20 to 30 dollars, 90 point range"
+# notes = "sweet and fruity"
+
+df = df[df['country'].str.lower() == country.lower()]
 df = df[df['points'] == point]
 df = df[df['price'].between(price - 10, price + 10)]
 
